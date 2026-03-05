@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="BLL/BLL.csproj" Id="187cc276-c489-48a0-b261-ee8927021f0c" />
+  <Project Path="DAL/DAL.csproj" Id="3c41c923-6348-4418-966c-8dfdc4c97d8d" />
+  <Project Path="EL/EL.csproj" Id="b67e37e0-6796-426f-a3b7-c117f3d3fff3" />
+  <Project Path="View/View.csproj" Id="b3a2fdd2-91d0-41c3-bb4d-9973f5ed9de8" />
+  <Project Path="ViewDapper/ViewDapper.csproj" Id="a0b9b802-2299-4e0d-bdab-dc624c65e091" />
+</Solution>
