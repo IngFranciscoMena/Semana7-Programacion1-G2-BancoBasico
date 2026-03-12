@@ -12,8 +12,12 @@ namespace EL
         public int CuentaId { get; set; }
         public string NumeroCuenta { get; set; } = "";
 
+        // propiedades de navegacion - nombre, apellido, direccion, etc
         public int ClienteId { get; set; }
-        public int TipoCuentaId { get; set; }
+        public Cliente Cliente { get; set; }
+
+        public int TipoCuentaId { get; set; } // - Nombre
+        public TipoCuenta TipoCuenta { get; set; }
 
         public decimal Saldo { get; set; }
         public EstadoCuenta Estado { get; set; }
