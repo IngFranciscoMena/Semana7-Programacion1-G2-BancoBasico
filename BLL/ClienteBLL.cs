@@ -13,13 +13,13 @@ namespace BLL
         // instancia de la clase ClienteDAL
         public ClienteDAL _clienteDAL;
 
-        public int Guardar(Cliente cliente, int id = 0, bool isUpdate = false)
+        public int Guardar(Cliente cliente, int id = 0, bool esEdicion = false)
         {
             // inicializar la instancia de ClienteDAL
             _clienteDAL = new ClienteDAL();
 
             // llamar al metodo Guardar de la clase ClienteDAL
-            int resultado = _clienteDAL.Guardar(cliente, id, isUpdate);
+            int resultado = _clienteDAL.Guardar(cliente, id, esEdicion);
 
             return resultado;
         }
@@ -28,12 +28,10 @@ namespace BLL
         public List<Cliente> ObtenerClientes()
         {
             // inicializar la instancia de ClienteDAL
-            //_clienteDAL = new ClienteDALADO();
+            _clienteDAL = new ClienteDAL();
 
-            //// expresion lambda
-            //var listado = _clienteDAL.ObtenerListadoClientes();
-
-            return null;
+            // retornarmos el resultado del metodo MostrarClientes
+            return _clienteDAL.MostrarClientes();            
         }
     }
 }

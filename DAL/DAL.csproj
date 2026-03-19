@@ -55,7 +55,6 @@
   <ItemGroup>
     <Compile Include="BancoDbContext.cs" />
     <Compile Include="ClienteDAL.cs" />
-    <Compile Include="DbSettings.cs" />
     <Compile Include="Migrations\202603120015531_IniciarBaseDatos.cs" />
     <Compile Include="Migrations\202603120015531_IniciarBaseDatos.Designer.cs">
       <DependentUpon>202603120015531_IniciarBaseDatos.cs</DependentUpon>

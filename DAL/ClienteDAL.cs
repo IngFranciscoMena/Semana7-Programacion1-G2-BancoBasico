@@ -14,7 +14,7 @@ namespace DAL
         BancoDbContext _db;
 
         // method para guardar un cliente
-        public int Guardar(Cliente cliente, int id = 0, bool isUpdate = false)
+        public int Guardar(Cliente cliente, int id = 0, bool esEdicion = false)
         {
             int resultado = 0;
 
@@ -23,9 +23,16 @@ namespace DAL
                 // inicializar nuestro DbContext
                 _db = new BancoDbContext();
 
-                if (isUpdate)
+                if (esEdicion)
                 {
+                    // vincular el id del cliente al objeto modificado
+                    cliente.ClienteId = id; 
 
+                    // indicar que el objeto fue modificado
+                    _db.Entry(cliente).State = System.Data.Entity.EntityState.Modified;
+
+                    // guardar los cambios en la BD
+                    _db.SaveChanges();
                 }
                 else
                 {
@@ -46,6 +53,25 @@ namespace DAL
             return resultado;
         }
 
+        // Obtener todos los clientes
+        public List<Cliente> MostrarClientes()
+        {
+            List<Cliente> clientes = new List<Cliente>();
 
-    }
+            try
+            {
+                // inicializar nuestro DbContext
+                _db = new BancoDbContext();
+
+                // Obtener el listado de clientes
+                clientes = _db.Clientes.ToList();
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return clientes;
+        }
+    }    
 }
