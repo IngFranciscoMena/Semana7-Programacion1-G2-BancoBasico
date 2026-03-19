@@ -33,6 +33,8 @@ namespace DAL
 
                     // guardar los cambios en la BD
                     _db.SaveChanges();
+
+                    resultado = cliente.ClienteId;
                 }
                 else
                 {

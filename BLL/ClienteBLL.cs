@@ -18,6 +18,10 @@ namespace BLL
             // inicializar la instancia de ClienteDAL
             _clienteDAL = new ClienteDAL();
 
+            cliente.Documento = cliente.Documento.Trim().Replace("-", "");
+            cliente.Telefono = cliente.Telefono.Trim().Replace("-", "").Replace("(", "").Replace(")", "");
+            cliente.FechaRegistro = DateTime.Now;
+
             // llamar al metodo Guardar de la clase ClienteDAL
             int resultado = _clienteDAL.Guardar(cliente, id, esEdicion);
 
